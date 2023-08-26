@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Spelling and Grammar Checker</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      background-color: #f2f2f2;
+    }
+    h1 {
+      color: #333366;
+    }
+    form {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    textarea {
+      width: 100%;
+      padding: 15px;
+      margin: 5px 0 22px 0;
+      border: none;
+      background: #f1f1f1;
+      resize: vertical;
+      min-height: 200px;
+    }
+    input[type=submit] {
+      background-color: #333366;
+      color: white;
+      padding: 14px 20px;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    input[type=submit]:hover {
+      background-color: #555599;
+    }
+    h2 {
+      margin-top: 20px;
+      color: #333366;
+    }
+    p {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Enter Text to Correct</h1>
+  
+  <form action="/correct" method="post">
+    <textarea name="user_text" placeholder="Enter text here..."></textarea><br><br>
+    <input type="submit" value="Correct Text">
+  </form>
+  
+  {% if corrected_text %}
+  <h2>Corrected Text:</h2>
+  <p>{{ corrected_text }}</p>
+  {% endif %}
+
+</body>
+</html>
